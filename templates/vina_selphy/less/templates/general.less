@@ -1,0 +1,318 @@
+/*=======================================*
+ *===========  General LESS	 ============*
+ *=======================================*
+	01. Start default 	
+	02. Start Mixed 	
+	03. Start Owl Carousel	
+	04. Start Bootstrap	
+
+ *=======================================
+ *===========  Start default  ============
+ *=======================================*/
+ .margin-right(@value: 10px){
+	margin-right: @value;
+	.rtl &{
+		margin-left: @value;
+		margin-right: 0;
+	}
+}
+.margin-left(@value: 10px){
+	margin-left: @value;
+	.rtl &{
+		margin-right: @value;
+		margin-left: 0
+	}
+}
+.margin(@top, @right, @bottom, @left) {
+	margin: @top @right @bottom @left;
+	.rtl & {
+		margin: @top @left @bottom @right;
+	}
+}
+ 
+.padding-right(@value: 10px){
+	padding-right: @value;
+	.rtl &{
+		padding-left: @value;
+		padding-right: 0;
+	}
+}
+.padding-left(@value: 10px){
+	padding-left: @value;
+	.rtl &{
+		padding-right: @value;
+		padding-left: 0;
+	}
+}
+.padding(@top, @right, @bottom, @left) {
+	padding: @top @right @bottom @left;
+	.rtl & {
+		padding: @top @left @bottom @right;
+	}
+}
+
+.right(@value: 10px){
+	right: @value;
+	.rtl &{
+		left: @value;
+		right: auto;
+	}
+}
+.left(@value: 10px){
+	left: @value;
+	.rtl &{
+		left: auto;
+		right: @value;
+	}
+}
+
+.float-right() {
+	float: right;
+	.rtl &{
+		float: left;
+	}
+}
+.float-left() {
+   float: left;
+   .rtl &{
+		float: right;
+	}
+ }
+.float-none() {
+   float: none;
+   .rtl &{
+		float: none;
+	}
+ }
+ 
+.text-left() {
+	text-align: left;
+	.rtl &{
+		text-align: right 
+	}
+}
+.text-right() {
+	text-align: right;
+	.rtl &{
+		text-align: left 
+	}
+}
+.text-center() {
+	text-align: center;
+}
+.appearance(@text:none) {
+	appearance:@text;
+	-moz-appearance:@text; /* Firefox */
+	-webkit-appearance:@text; /* Safari and Chrome */
+}
+.mixin-loop (@i) when (@i > 0) {
+  &:nth-child(@{i}) {
+    .transition(all unit(@i/3,s) ease 0s);
+  }
+  .mixin-loop(@i - 1);
+}
+.floatright {
+	.float-right;
+}
+.floatleft {
+	.float-left;
+}
+.sppb-text-left{
+	.text-left;
+}
+.sppb-text-right{
+	.text-right;
+}
+/*End Mixins  
+ *======================================
+ *========= Start Mixed CSS   ==========
+*=======================================*/
+.arrow() {
+	position: relative;
+	&:before {
+		content:'';
+		position:absolute;
+		bottom:-10px;
+		left:50%;
+		width:0;
+		height:0;
+		margin-left: -5px;
+		border:7px solid transparent;
+		border-top: 5px solid #000;
+	}
+}
+.inline-block() {
+   display: inline-block;
+   *display: inline;
+   zoom: 1;   
+}
+.circle(@size: 45px, @color: #efefef ) {
+	.square(@size);
+	border: 1px solid @color;
+	color: @color;
+	padding: 1px;
+	margin: -1px;
+	line-height: @size;
+	text-align: center;
+	.border-radius(50%);
+}
+/*End Mixed CSS
+ *======= 	Start Owl Carousel   ========
+*=======================================*/
+.owl-theme {
+	list-style: none;
+	direction: initial;
+	.rtl & .owl-item{
+		direction: rtl;
+	}
+	&.vina-manufacturers-virtuemart {
+		overflow: visible;
+	}
+	
+	.owl-controls {
+		margin: 0 15px;
+		.owl-pagination {
+			
+			.owl-page {
+				span.owl-numbers {					
+					height: 12px;
+					width: 12px;
+					margin: 0 3px;
+					display: block;
+					padding: 0;
+					font-size: 0;
+					line-height: 0;
+				}
+			}
+		}
+		.owl-buttons{
+			position: absolute;
+			.right(0);
+			.opacity(0);
+			top: 0;
+			margin: -3px 15px;
+			overflow: hidden;
+			div {
+				font-size:0;
+				line-height: 0;
+				.border-radius(0);
+				height: 80px;
+				width: 32px;
+				background-color: #cacaca;			
+				.opacity(100);
+				margin: 3px;
+				background-size: 100%;
+				float: left;
+				&:hover, 
+				&:active {
+					background-position: left bottom;
+				}
+				&:before{
+					content:"\f053" ;
+					font-family: 'FontAwesome';
+					position: absolute;
+					top: 40px;
+					right: 10px;
+					font-size: 24px;
+				}
+			}
+			.owl-prev {
+				
+			}
+			.owl-next {
+				&:before{
+					content:"\f054" ;
+					left: 10px;
+				}
+			}
+		}
+	}
+	&.style1 {
+		margin-top: 0 !important;
+		padding-top: 0 !important;
+		.owl-buttons{
+			position: initial;
+			margin: 0;
+			div {
+				position: absolute;
+				top: 50%;
+				.translate(0, -50%);
+				margin: 0;
+			}
+			.owl-prev {
+				left: 2px;
+			}
+			.owl-next {
+				right: 2px;
+			}
+		}
+	}
+	&.style2 {
+	
+	}
+	&:hover {
+		.owl-controls {
+			.owl-buttons {
+				.opacity(100);
+			}
+			
+		}
+	}
+	&.vina-carousel-virtuemart{
+		margin-top: 0 !important;
+		padding-top: 0 !important;
+		overflow: visible !important;
+		.owl-buttons{
+			position: initial;
+			margin: 0;
+			div {
+				position: absolute;
+				top: 40%;
+				.translate(0, -50%);
+				margin: 0;
+				background-color: rgba(0,0,0,0.5);
+				background-position: left bottom;
+				&:hover, 
+				&:active {
+					//background-position: left top;
+				}
+			}
+			.owl-prev {
+				left: -15px;
+			}
+			.owl-next {
+				right: -15px;
+			}
+		}
+	}
+}
+
+/*End  Owl Carousel
+ *========== Start Bootstrap ============
+ *=======================================*/
+.btn:active,
+.btn.active {
+	.box-shadow(none);
+}
+.wrap-carousel {
+	.carousel-inner {
+		display: inline-block;
+	}
+}
+.carousel-indicators {
+	li {		
+		.square(8px);
+		margin: 0;		
+		border: 0;
+		border-radius: 100%;		
+		background-color: #bababa \9;
+		background-color: #bababa;
+		&:hover,
+		&.active {		
+			.square(8px);
+		}
+	}
+}
+/*End Bootstrap
+*=======================================*/
+

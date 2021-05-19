@@ -1,0 +1,379 @@
+/*=======================================
+ *===========  Footer Less	 ============
+ *=======================================
+	1. Brand
+	2. Bottom
+	3. Footer
+ *==========   Start Brand   ============
+ *=======================================*/
+#sp-brand-wrapper {
+
+}
+/* End  Brand
+ *==========   Start Bottom   ===========
+ *=======================================*/
+#sp-position-wrapper{
+	padding: 28px 0 23px 0 !important;
+	#sp-position2{
+		margin-top: -2px;
+	}
+}
+#sp-bottom-wrapper{
+	background: #e5e5e5;
+	color: #666666;
+	padding: 50px 0 45px;
+	
+	.modtitle {
+		font-size: 15px;
+		margin-top: 18px;
+		color: #2b2b2b;
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+	a{
+		color: #666666;		
+		font-weight: 400;
+	}
+	.logo-footer {
+		margin: 0 0 30px;
+	}
+	.contact-info {
+		    margin-top: 15px;
+		li {
+			.padding-left(50px);
+			position: relative;
+			min-height: 40px;		
+			padding-top:8px;			
+			line-height: 23px;
+			font-family: Open Sans, sans-serif;
+			.margin-right(20px);
+			a{
+				font-weight: 400;
+			}
+			&.fa-phone{
+				font-size: 15px;
+			}
+			&:before {
+				position: absolute;
+				.left(0);
+				height: 25px;
+				width: 36px;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				color: #666;
+				border-right: 1px solid #cecece;
+				.text-left();
+				line-height: 25px;
+				font-size: 20px;
+				font-family: FontAwesome;
+			}
+			&.sp-contact-phone,
+			&.sp-contact-email {
+				padding-top:8px;
+			}
+		}
+	}
+	.acymailing_form {
+		position: relative;
+		.inputbox {
+			.border-radius(0);
+			height: 40px;
+			background: transparent;
+			border: 1px solid #acadad;
+			font-size: 12px;
+		}
+		.acysubbuttons  {
+			.transition(~'color 400ms, background-color 400ms, border-color 400ms');
+			position: absolute;
+			top: 0;
+			.right(0);
+			.square(40px);
+			overflow: hidden;
+			color: #fff;
+			.button{
+				.square(100%);
+				border: none;
+				font-size: 0;
+				.border-radius(0);
+				background-image: url(../images/icons/next.png);
+				background-position: center bottom;
+				&:hover, &:active{
+					.opacity(70);
+					border: none;
+				}
+			}
+		}
+	}
+	.latest-twitter {
+		li {
+			margin-bottom: 30px;
+			.padding-left(35px);
+			position: relative;
+			a {
+				white-space: nowrap;
+			}
+			&:before {
+				font-family: FontAwesome;
+				content: "\f099 ";
+				font-size: 25px;
+				position: absolute;
+				.left(0);
+				top: 5px;
+			}
+		}
+	}
+	.vina-css3-image-gallery-wrapper {
+		padding: 35px 0 15px;
+		background: transparent;
+	}
+	.social-icons {
+		margin: -2px; 
+		li {
+			display: inline-block;
+			margin: 2px;
+			a {
+				.square(40px);
+				display: block;
+				.border-radius(50%);
+				border: 1px solid #acadad;
+				text-align: center;
+				line-height: 38px;
+				color: #fff;
+			}
+			&:hover {
+				a {
+					border-color: transparent;
+				}
+			}
+		}	
+	}
+	.menu {
+		li {
+			list-style: inside none disc;
+			line-height: 30px;
+			display: table;
+		}
+	}
+	.photo-flickr {
+		.clearfix;
+		margin: -2px;
+		li {
+			padding: 2px;
+			.float-left;
+			overflow: hidden;
+			width: 25%;
+			a {
+				.image-block1;
+			}
+		}
+	}
+	//home2 
+	&.home2-bottoms {
+		> .container {
+			> .row {
+				> div {
+					min-height: 320px;
+					border-left: 1px solid #e5e5e5;
+					.sp-column  {
+						.padding-left(25px);
+					}
+					&:first-child{
+						border-left: none;
+						.sp-column  {
+							.padding-left(0);
+						}
+					}
+				}
+			}
+		}
+		.logo-footer {
+			margin-top: -17px;
+		}
+		.modtitle {
+			margin-top: 0;
+		}
+		.menu {
+			list-style: initial;
+			li {
+				line-height: 35px;
+			}
+		}
+		.btn {
+			font-size: 12px;
+			.btn-fill-horz-o;
+			.border-radius(0);
+			font-weight: 300;
+			text-transform: uppercase;
+			border: none;
+			line-height: 23px;
+			padding: 6px 20px;
+			letter-spacing: 1px;
+			margin-top: 20px;
+		}
+		.contact-info {
+			li {
+				
+				&:before {
+					border-color #e5e5e5;
+				}
+			}
+		}
+	}
+}
+
+
+/* End  Bottom
+ *===========  Start Footer   ===========
+ *=======================================*/
+#sp-footer-wrapper {
+	background: #3b3d3d;
+	color: #fff;
+	padding: 14px 0;
+	line-height: 22px;
+	font-size: 12px;
+	a {
+		color: #fff;
+		
+	}
+	ul {
+		display:inline-block;
+		&.nav {
+			display:inline-block;
+			list-style:none;
+			padding:0;
+			margin:0 5px;
+			li {
+				display:inline-block; 
+				margin:0 5px;
+				a {
+					display:block;
+					&:hover{
+						background:none;
+					}
+				}
+			}
+		}
+	}
+	&.home2-footer {
+		border-top: 1px solid #e5e5e5;
+		background: #fff;
+	}
+}
+.sp-totop {
+	color: #fff;
+	line-height: 60px;
+	text-align: center;	
+	text-decoration: none;	
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	display: block;
+	.square(60px);
+	background: #000;
+	cursor: pointer;
+	z-index: 9999;
+	.transition(all 0.4s ease);
+	small {
+		display: none;
+	}
+	i {
+		color: #fff;
+		font-size: 25px;
+		font-weight: normal;
+		line-height: 40px;
+		.transition(1s);
+		display: none;
+	}
+}
+/* End Footer
+ *=======================================*/
+
+.social-icons {
+	margin: auto !important;
+	display: table;
+	text-align: center;
+	.float-right;
+	li {
+		.float-left;
+		margin: 0;
+	
+		line-height: 32px;
+		margin: 0 2px;
+		display: block;
+		a {
+			padding: 5px;
+			text-align: center;
+			.square(43px);
+			display: block;
+			border-radius: 100%;
+			color: #fff;
+			font-size: 24px;
+		}
+		.facebook{
+			background: #4f66aa;
+		}
+		.twitter{
+			background: #399bff;
+		}
+		.google-plus{
+			background: #ea684a;
+		}
+		.instagram{
+			background: #b00f0f;
+		}
+	}
+}
+	.btn-default {
+		color: #fff;
+	} 
+	.acymailing_module {
+		.acymailing_introtext {
+			.float-left;
+			line-height: 40px;
+			text-transform: capitalize;
+			font-size: 18px;
+			.margin-right(30px) !important;
+			margin-top: -5px !important;
+			font-weight: 400;
+			&:before{				
+				height: 50px;
+				width: 50px;				
+				display: inline-block;
+				border-radius: 100%;			
+				.margin-right(10px);
+				color: #fff;			
+				text-align: center;
+				line-height: 49px;
+				font-size: 24px;
+				font-family: FontAwesome;
+				content: "\f0e0";
+			}
+		}
+		.acymailing_form {
+			position: relative;
+			display: inline-block;
+			#sp-bottom-wrapper .acymailing_form;
+			border: 1px solid rgba(255,255,255,0.2);
+			padding: 4px;
+			p {
+				margin: 0;
+			}
+			.inputbox {
+				height: 40px;			
+				 max-width: 285px;
+				border-color: #dcdcdc;
+				background: #fff;
+			}
+			.acysubbuttons {
+				.right(-100px);
+				width: auto;
+				.button {
+					background: #444;
+					font-size: 13px;
+					text-transform: uppercase;
+					font-weight: 700;
+				}
+			}
+		}
+	}

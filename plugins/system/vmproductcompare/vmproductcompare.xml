@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension version="3.0" type="plugin" group="system" method="upgrade" client="site">
+
+	<name>System - Product Compare For Virtuemart</name>
+
+	<author>Webkul</author>
+
+	<creationDate>March 2014</creationDate>
+
+	<copyright>webkul</copyright>
+
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<authorUrl>www.webkul.com</authorUrl>
+
+	<version>2.0</version>
+
+	<description>Product Compare For Virtuemart (version 2.0)</description>
+
+	<files>
+		<filename plugin="vmproductcompare">vmproductcompare.php</filename>
+		<filename plugin="vmproductcompare">backgrounds.png</filename>		
+		<filename plugin="vmproductcompare">compare_ajax.php</filename>		
+		<folder plugin="vmproductcompare">css</folder>
+		<folder plugin="vmproductcompare">image</folder>
+		<folder plugin="vmproductcompare">elements</folder>
+	</files>
+
+
+  
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/vmproductcompare/elements">
+				<fieldset name="basic" >
+					<field name="country" type="country" default="" label="Country" description="Select your country" size="40" />
+					<field name="jquery" type="radio" class="btn-group btn-group-yesno"  default="Inline" label="Load Jquery" description="Load Jquery">
+					<option value="None">None</option>
+					<option value="Head">Head</option>
+					<option value="Inline">Inline</option>
+				    </field>
+					
+					<field
+					name="show_product_name"
+					type="radio"
+					default="1"
+					label="Show Product Name"
+					description="Select 'yes' to show Product Name or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_image"
+					type="radio"
+					default="1"
+					label="Show Product Image"
+					description="Select 'yes' to show Product Image or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_rating"
+					type="radio"
+					default="1"
+					label="Show Product rating"
+					description="Select 'yes' to show Product rating or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_price"
+					type="radio"
+					default="1"
+					label="Show Product Price"
+					description="Select 'yes' to show Product Price or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_description"
+					type="radio"
+					default="1"
+					label="Show Product description"
+					description="Select 'yes' to show Product description or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_manufacture"
+					type="radio"
+					default="1"
+					label="Show Product manufacture"
+					description="Select 'yes' to show Product Manufacture or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_availability"
+					type="radio"
+					default="1"
+					label="Show Product Availability"
+					description="Select 'yes' to show Product Availability or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_sku"
+					type="radio"
+					default="1"
+					label="Show Product sku"
+					description="Select 'yes' to show Product sku or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_weight"
+					type="radio"
+					default="1"
+					label="Show Product weight"
+					description="Select 'yes' to show Product weight or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				<field
+					name="show_product_addtocart"
+					type="radio"
+					default="1"
+					label="Show Add To cart"
+					description="Select 'yes' to show Add to cart or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+
+				<field
+					name="show_product_action"
+					type="radio"
+					default="1"
+					label="Show Action"
+					description="Select 'yes' to show Product Action or select 'No' to hide" class="btn-group btn-group-yesno">
+					
+					<option
+						value="1">JYES</option>
+					<option
+						value="0" >JNO</option>	
+				</field>
+
+				 <field name="wk_compare_attach_class" type="text" class="btn-group btn-group-yesno"  default=".spacer-buy-area" label="Virtuemart Class" description="Please select the virtuemart Class After which you want to append Product compare icon if you use default virtuemart theme then you don't to do any thing beacause we set '.spacer-buy-area' for default theme but you use other theme then you have use class according to your virtuemart theme"/>
+
+
+				</fieldset>			
+
+		</fields>
+
+	</config>
+
+</extension>	

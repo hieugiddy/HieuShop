@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+
+<!-- Author Block -->
+	<name>Vina Vertical Scroller for Twitter</name>
+	<author>VinaGecko.com</author>
+	<creationDate>June 20, 2014</creationDate>
+	<copyright>Copyright (C) 2014 VinaGecko.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenseses/gpl-3.0.html GNU/GPL</license>
+	<authorEmail>admin@vinagecko.com</authorEmail>
+	<authorUrl>http://VinaGecko.com</authorUrl>
+	<version>1.0.0</version>
+
+<!-- Description Block -->
+	<description>
+		<![CDATA[<div style="border: 1px solid red; border-radius: 7px; padding: 10px;">
+			<strong>Vina Vertical Scroller for Twitter</strong> is the best twitter module for Joomla 3.x. This module allow you to display latest tweets from your twitter account or another twitter account in a <strong>Vertical Scroller</strong>. You can set number of tweets will display in scroller, show/hide user avatar and you can disable <strong>Scrolling Effect</strong> if you don't want to use it.<br/><br/>
+			<strong>VinaGecko.com</strong> - Premium <a href="http://vinagecko.com/joomla-modules" target="_blank">Joomla Modules</a>, <a href="http://vinagecko.com/joomla-plugins" target="_blank">Joomla Plugins</a>, <a href="http://vinagecko.com/joomla-templates" target="_blank">Joomla Templates</a>.
+		</div>]]>
+	</description>
+
+<!-- Files upload Block -->	
+	<files>
+		<filename module="mod_vina_vscroller_twitter">mod_vina_vscroller_twitter.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>libs</folder>
+		<folder>assets</folder>
+		<folder>languages</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+<!-- Languages Block -->
+	<languages>
+		<language tag="en-GB">languages/en-GB.mod_vina_vscroller_twitter.ini</language>
+	</languages>
+
+<!-- Config Block -->
+	<config>
+		<fields name="params">
+			<!-- Source Block -->
+			<fieldset name="basic">
+				<field 
+					name="apiKey" 
+					type="text" 
+					default="" 
+					label="VINA_VSCROLLER_TWITTER_API_KEY" 
+					description="VINA_VSCROLLER_TWITTER_API_KEY_DESC" />
+				<field 
+					name="apiKeySecret" 
+					type="text" 
+					default="" 
+					label="VINA_VSCROLLER_TWITTER_API_SECRET" 
+					description="VINA_VSCROLLER_TWITTER_API_SECRET_DESC" />
+				<field 
+					name="accessToken" 
+					type="text" 
+					default="" 
+					label="VINA_VSCROLLER_TWITTER_ACCESS_TOKEN" 
+					description="VINA_VSCROLLER_TWITTER_ACCESS_TOKEN_DESC" />
+				<field 
+					name="accessTokenSecret" 
+					type="text" 
+					default="" 
+					label="VINA_VSCROLLER_TWITTER_ACCESS_TOKEN_SECRET" 
+					description="VINA_VSCROLLER_TWITTER_ACCESS_TOKEN_SECRET_DESC" />
+				
+				<field type="spacer" name="tokens" hr="true" />
+				<field 
+					name="username" 
+					type="text" 
+					default="vnwebsolutions" 
+					label="VINA_VSCROLLER_TWITTER_USERNAME" 
+					description="VINA_VSCROLLER_TWITTER_USERNAME_DESC" />
+				<field 
+					name="numberOfTweets" 
+					type="text" 
+					default="10" 
+					label="VINA_VSCROLLER_TWITTER_NUMBER_TWEETS" 
+					description="VINA_VSCROLLER_TWITTER_NUMBER_TWEETS_DESC"/>
+				<field 
+					name="showUsername" 
+					type="hidden" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_SHOW_USERNAME" 
+					description="VINA_VSCROLLER_TWITTER_SHOW_USERNAME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="avatar" 
+					type="radio" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_SHOW_AVATAR" 
+					description="VINA_VSCROLLER_TWITTER_SHOW_AVATAR_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="avatarWidth" 
+					type="text" 
+					default="48" 
+					label="VINA_VSCROLLER_TWITTER_AVATAR_WIDTH" 
+					description="VINA_VSCROLLER_TWITTER_AVATAR_WIDTH_DESC" />
+				<field 
+					name="linkedAvatar" 
+					type="hidden" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_LINKED_AVATAR" 
+					description="VINA_VSCROLLER_TWITTER_LINKED_AVATAR_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="linkedSearch" 
+					type="hidden" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_LINKED_SEARCH" 
+					description="VINA_VSCROLLER_TWITTER_LINKED_SEARCH_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="linkedMention" 
+					type="hidden" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_LINKED_MENTION" 
+					description="VINA_VSCROLLER_TWITTER_LINKED_MENTION_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="emailLinked" 
+					type="hidden" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_EMAIL_LINKED" 
+					description="VINA_VSCROLLER_TWITTER_EMAIL_LINKED_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="tweetTime" 
+					type="radio" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_TWEET_TIME" 
+					description="VINA_VSCROLLER_TWITTER_TWEET_TIME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="tweetTimeLinked" 
+					type="hidden" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_LINKED_TWEET_TIME" 
+					description="VINA_VSCROLLER_TWITTER_LINKED_TWEET_TIME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="tweetSource" 
+					type="hidden" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_TWEET_SRC" 
+					description="VINA_VSCROLLER_TWITTER_TWEET_SRC_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="followUs" 
+					type="radio" 
+					default="1" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_FOLLOW_US" 
+					description="VINA_VSCROLLER_TWITTER_FOLLOW_US_DESC">
+						<option value="0">JHIDE</option>
+						<option value="1">JSHOW</option>
+				</field>
+				<field 
+					name="target" 
+					type="list" 
+					default="_blank" 
+					class="btn-group" 
+					label="VINA_VSCROLLER_TWITTER_NEW_WINDOW" 
+					description="VINA_VSCROLLER_TWITTER_NEW_WINDOW_DESC">
+						<option value="_self">Parent Window</option>
+						<option value="_blank">New Window</option>
+				</field>
+			</fieldset>
+			
+			<!-- Basic Block -->
+			<fieldset name="module">
+				<field 
+					name="moduleWidth" 
+					type="text" 
+					size="4" 
+					default="450px" 
+					label="VINA_VSCROLLER_TWITTER_MODULE_WIDTH" 
+					description="VINA_VSCROLLER_TWITTER_MODULE_WIDTH_DESC"/>
+				<field 
+					name="moduleHeight" 
+					type="text" 
+					size="4" 
+					default="auto" 
+					label="VINA_VSCROLLER_TWITTER_MODULE_HEIGHT" 
+					description="VINA_VSCROLLER_TWITTER_MODULE_HEIGHT_DESC"/>
+				<field
+					name="bgImage"
+					type="media" 
+					label="VINA_VSCROLLER_TWITTER_BACKGROUND_IMAGE" 
+					description="VINA_VSCROLLER_TWITTER_BACKGROUND_IMAGE_DESC" 
+					size="30"
+					default="" />
+				<field 
+					name="isBgColor" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="VINA_VSCROLLER_TWITTER_USE_BACKGROUND_COLOR" 
+					description="VINA_VSCROLLER_TWITTER_USE_BACKGROUND_COLOR_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field
+					name="bgColor"
+					type="color" 
+					label="VINA_VSCROLLER_TWITTER_BACKGROUND_COLOR" 
+					description="VINA_VSCROLLER_TWITTER_BACKGROUND_COLOR_DESC" 
+					size="30"
+					default="#204468" />
+				<field 
+					name="modulePadding" 
+					type="text" 
+					size="4" 
+					default="10px" 
+					label="VINA_VSCROLLER_TWITTER_PADDING" 
+					description="VINA_VSCROLLER_TWITTER_PADDING_DESC"/>
+				<field 
+					name="headerBlock" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="VINA_VSCROLLER_TWITTER_HEADER_BLOCK" 
+					description="VINA_VSCROLLER_TWITTER_HEADER_BLOCK_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field 
+					name="headerText" 
+					type="text" 
+					size="4" 
+					default="Tweets from Vina Web Solutions" 
+					label="VINA_VSCROLLER_TWITTER_HEADER_TEXT" 
+					description="VINA_VSCROLLER_TWITTER_HEADER_TEXT_DESC"/>
+				<field
+					name="headerTextColor"
+					type="color" 
+					label="VINA_VSCROLLER_TWITTER_HEADER_TEXT_COLOR" 
+					description="VINA_VSCROLLER_TWITTER_HEADER_TEXT_COLOR_DESC" 
+					size="30"
+					default="#FFFFFF" />
+				<field 
+					name="controlButtons" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="VINA_VSCROLLER_TWITTER_CONTROL_BUTTONS" 
+					description="VINA_VSCROLLER_TWITTER_CONTROL_BUTTONS_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field 
+					name="isItemBgColor" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="VINA_VSCROLLER_TWITTER_USE_ITEM_BACKGROUND_COLOR" 
+					description="VINA_VSCROLLER_TWITTER_USE_ITEM_BACKGROUND_COLOR_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field
+					name="itemBgColor"
+					type="color" 
+					label="VINA_VSCROLLER_TWITTER_ITEM_BACKGROUND_COLOR" 
+					description="VINA_VSCROLLER_TWITTER_ITEM_BACKGROUND_COLOR_DESC" 
+					size="30"
+					default="#FFFFFF" />
+				<field 
+					name="itemPadding" 
+					type="text" 
+					size="4" 
+					default="10px" 
+					label="VINA_VSCROLLER_TWITTER_ITEM_PADDING" 
+					description="VINA_VSCROLLER_TWITTER_ITEM_PADDING_DESC"/>
+				<field
+					name="itemTextColor"
+					type="color" 
+					label="VINA_VSCROLLER_TWITTER_ITEM_TEXT_COLOR" 
+					description="VINA_VSCROLLER_TWITTER_ITEM_TEXT_COLOR_DESC" 
+					size="30"
+					default="#141823" />
+				<field
+					name="itemLinkColor"
+					type="color" 
+					label="VINA_VSCROLLER_TWITTER_ITEM_LINK_COLOR" 
+					description="VINA_VSCROLLER_TWITTER_ITEM_LINK_COLOR_DESC" 
+					size="30"
+					default="#204468" />
+				<field type="spacer" name="scroller" hr="true" />
+				<field 
+					name="enableScroller" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="VINA_VSCROLLER_TWITTER_SCROLLER" 
+					description="VINA_VSCROLLER_TWITTER_SCROLLER_DESC">
+						<option value="0">Disable</option>
+						<option value="1">Enable</option>
+                </field>
+				<field 
+					name="direction" 
+					type="list" 
+					default="up" 
+					label="VINA_VSCROLLER_TWITTER_DIRECTION" 
+					description="VINA_VSCROLLER_TWITTER_DIRECTION_DESC">
+						<option value="up">Up</option>
+						<option value="down">Down</option>
+                </field>
+				<field 
+					name="easing" 
+					type="list" 
+					default="jswing" 
+					label="VINA_VSCROLLER_TWITTER_EASING" 
+					description="VINA_VSCROLLER_TWITTER_EASING_DESC">
+						<option value="jswing">jswing</option>
+						<option value="def">def</option>
+						<option value="easeInQuad">easeInQuad</option>
+						<option value="easeOutQuad">easeOutQuad</option>
+						<option value="easeInOutQuad">easeInOutQuad</option>
+						<option value="easeInCubic">easeInCubic</option>
+						<option value="easeOutCubic">easeOutCubic</option>
+						<option value="easeInOutCubic">easeInOutCubic</option>
+						<option value="easeInQuart">easeInQuart</option>
+						<option value="easeOutQuart">easeOutQuart</option>
+						<option value="easeInOutQuart">easeInOutQuart</option>
+						<option value="easeInQuint">easeInQuint</option>
+						<option value="easeOutQuint">easeOutQuint</option>
+						<option value="easeInOutQuint">easeInOutQuint</option>
+						<option value="easeInSine">easeInSine</option>
+						<option value="easeOutSine">easeOutSine</option>
+						<option value="easeInOutSine">easeInOutSine</option>
+						<option value="easeInExpo">easeInExpo</option>
+						<option value="easeOutExpo">easeOutExpo</option>
+						<option value="easeInOutExpo">easeInOutExpo</option>
+						<option value="easeInCirc">easeInCirc</option>
+						<option value="easeOutCirc">easeOutCirc</option>
+						<option value="easeInOutCirc">easeInOutCirc</option>
+						<option value="easeInElastic">easeInElastic</option>
+						<option value="easeOutElastic">easeOutElastic</option>
+						<option value="easeInOutElastic">easeInOutElastic</option>
+						<option value="easeInBack">easeInBack</option>
+						<option value="easeOutBack">easeOutBack</option>
+						<option value="easeInOutBack">easeInOutBack</option>
+						<option value="easeInBounce">easeInBounce</option>
+						<option value="easeOutBounce">easeOutBounce</option>
+						<option value="easeInOutBounce">easeInOutBounce</option>
+                </field>
+				<field 
+					name="speed" 
+					type="text" 
+					default="slow" 
+					label="VINA_VSCROLLER_TWITTER_SPEED" 
+					description="VINA_VSCROLLER_TWITTER_SPEED_DESC" />
+				<field 
+					name="interval" 
+					type="text" 
+					default="2000" 
+					label="VINA_VSCROLLER_TWITTER_INTERVAL" 
+					description="VINA_VSCROLLER_TWITTER_INTERVAL_DESC" />
+				<field 
+					name="visible" 
+					type="text" 
+					default="5" 
+					label="VINA_VSCROLLER_TWITTER_VISIBLE" 
+					description="VINA_VSCROLLER_TWITTER_VISIBLE_DESC" />
+				<field 
+					name="mousePause" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="VINA_VSCROLLER_TWITTER_MOUSE_PAUSE" 
+					description="VINA_VSCROLLER_TWITTER_MOUSE_PAUSE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				
+			</fieldset>
+			
+			<!-- Advanced Block -->
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+						<option value="1">JGLOBAL_USE_GLOBAL</option>
+						<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

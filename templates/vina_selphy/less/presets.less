@@ -1,0 +1,1106 @@
+/*=======================================*
+ *=============  Module 	=============*
+ *=======================================*
+	01. Default	  	
+	02. Start Header
+	03. Start Footer
+	04. Start theme
+	05. Start Pages
+	06. Start joomla 		
+	07. Start Module
+	08. Start vituemart	
+	09. Start K2	
+	
+ *=======================================
+ *=========== Start Default  ============
+ *=======================================*/
+@import 'variables';
+@import 'mixins';
+
+body {
+	color: @text_color;
+	background-color: @bg_color;
+	.body-innerwrapper {
+		background: @bg_color;
+	}
+}
+
+h1,h2,h3,h4,h5,h6,.header_color {
+	color: @header_color;
+}
+
+// Anchor
+a{	
+	&:hover,
+	&:focus{
+		color: @major_color;
+		text-decoration: none;	
+		outline: none;
+	}
+}
+.a_text_color() {
+	color: @text_color;
+	&:hover, &:focus {
+		color: @major_color;
+	}
+}
+.a_header_color() {
+	color: @header_color;
+	&:hover, &:focus {
+		color: @major_color;
+	}
+}
+button,
+.sppb-btn,
+.sppb-btn-default,
+.qlform .form-horizontal .controls input.submit,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input.addtocart-button,
+.cart-view .continue_link,
+.vina-button {
+	color: #fff;
+	border-color: @major_color;
+	background: @major_color;
+	&:active,
+	&:focus,
+	&:hover {
+		color: #fff;
+		border-color: lighten(@major_color, 15%);
+		background: lighten(@major_color, 15%);
+	}
+}
+.status-new,.status-new-sale {
+	background-color: @lblnew_color;
+	&:after{
+		border-top: 5px solid @lblnew_color;
+	}
+}
+.status-sale {
+	background-color: @lblsale_color;
+	&:after{
+		border-top: 5px solid @lblsale_color;
+	}
+}
+// Off Canvas
+#offcanvas-toggler {
+	>i {		
+		&:hover {
+			color: @major_color;
+		}
+	}
+}
+
+//Button
+.btn-primary,
+.sppb-btn-primary {
+	border-color: darken(@major_color, 6%);
+	background-color: @major_color;
+
+	&:hover {
+		border-color: darken(@major_color, 15%);
+		background-color: darken(@major_color, 10%);
+	}
+}
+
+// Body Innerwrapper
+
+.layout-boxed .body-innerwrapper {
+	background: @bg_color;
+}
+.list-social {
+	a {
+		color: @text_color;
+		&:hover {
+			color: #fff;
+			background: @major_color;
+		}
+	}
+}
+.major_color {
+
+	
+}
+.style-bg-title{
+	.sppb-testimonial-message{		
+		border-right: 4px solid @major_color;	
+	}
+}
+.acymailing_module {
+	.acymailing_introtext{
+		&:before{
+			background: @major_color;
+		}
+	}
+}	
+/* End Default 
+ *=======================================
+ *============  Start Header  ===========
+ *=======================================*/
+
+#sp-top-wrapper {
+	a {
+		color: #e7e7e7;
+		&:hover {
+			color: @major_color;
+		}
+	}
+	.bootstrap-select{
+		.dropdown-menu {
+			li{
+				a {
+					color: @header_color;
+					&:hover {
+						color: #fff;
+						background: @major_color;
+					}
+				}
+				&.selected {
+					a {
+						color: #fff;
+						background: @major_color;
+					}
+				}
+			}
+		}
+		.btn{
+			&:hover{
+				background: @major_color;
+				color: #fff;
+			}
+		}
+	}
+	#login-form {
+		.logout-button {
+			.btn {
+				color: @major_color;
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+		.login-title {
+			&:hover {
+				color: @major_color;
+			}
+		}
+	}
+	.menu {
+		li{
+			&.active,
+			&:hover{
+				background: @major_color;
+				color: #fff;
+				a{
+					color: #fff;
+				}
+			}
+			ul{
+				li{
+					&.active,
+					&:hover{				
+						a{
+							color: #fff !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#sp-header{
+	background: @major_color;
+}
+#sp-top-wrapper{
+	background: lighten(@major_color, -4%);
+}
+.sp-module.mod_vmcategory .sp-module-content .vina-treeview-virtuemart ul li a:hover {
+	color: @major_color;
+}
+.sp-module {
+	div {
+		&.vina-treeview-virtuemart {
+			ul {
+				li {
+					&.collapsable,
+					&:hover {
+						> a {
+							color: @major_color !important;
+							&:before{
+								color: @major_color !important;
+							}
+						}
+					}
+				}
+			}				
+		}
+	}
+}
+.sp-totop {
+	background: @major_color url(../../images/icons/totop.png) no-repeat scroll center center;
+}
+
+// Megamenu 
+.sp-megamenu-parent {
+	>li {
+		>a {
+			&:before {
+				background: @major_color;
+			}
+		}
+		&.active>a,
+		&:hover>a {
+			color: @major_color;
+		}
+	}
+
+	.sp-dropdown {
+		li.sp-menu-item {
+			>a {
+
+				&:hover {
+					color: @major_color;
+				}
+			}
+			&.active>a {
+				color: @major_color;
+			}
+		}
+	}
+}
+.herader-home3{
+	.sp-megamenu-parent {
+		>li {
+			>a {
+				
+				&:before {
+					background: @major_color;
+				}
+			}
+			&.active>a,
+			&:hover>a {
+				background: @major_color;
+				color: #fff;
+			}
+		}
+	}
+}
+.sp-module{
+	&.vinaToggleClass {
+		.sp-module-title {
+			.modtitle:hover {
+				color: @major_color;
+			}
+		}
+		.mod_currency_language {
+			.bootstrap-select {
+				div.dropdown-menu {
+					ul {
+						li {
+							&.selected {
+								a {
+									background-color: #fff;
+									color: @major_color;
+								}
+							}
+							a {
+								&:hover {
+									background-color: #fff;
+									color: @major_color;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.block-mini-cart {
+		.mini-cart-title {
+			.number {
+				
+			}
+		}
+	}
+	&.vm_category {
+		.sp-module-title {
+			background-color: darken(@major_color, 15%);
+		}
+		.vina-treeview-virtuemart {
+			li {
+				a,.more-inner {
+					background-image:url(../../images/presets/@{preset}/line.png);
+				}
+			}
+		}
+	}
+	&.mod_search {
+		.sp-vmsearch {
+			.search-button-wrapper {
+				button {
+					
+					&:hover,
+					&:focus {
+						color: @major_color;
+					}
+				}
+			}
+		}
+	}
+	&.vm_category {
+		.vina-treeview-virtuemart {
+			.treeview {
+				li {
+					&.vmcategory-more {
+						&:hover {
+							color: @major_color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#sp-header-bottom-wrapper {
+	&:before{
+		background-color: @major_color;
+	}
+}
+/* End Header
+ *============  Start Footer  =========== 
+ *=======================================*/
+#sp-position-wrapper {
+	.social-icons {
+		li {
+			&:hover {
+				border-color: transparent;
+			}
+			a {
+				&:hover {
+					color: @header_color;
+					background: #fff;
+				}
+			}
+		}
+	}
+}
+#sp-bottom-wrapper {
+	a:hover {
+		color: @major_color;
+		padding-left: 5px;
+	}
+	li.active{
+		a{
+			color: @major_color;
+		}
+	}
+	.acymailing_form {
+		.button {
+			background-color: @major_color;
+		}
+	}
+	.latest-twitter {
+		a {
+			color: @major_color;
+			&:hover {
+				color: lighten(@major_color, 20%);
+			}
+		}
+	}
+	.social-icons {
+		li {
+			&:hover {
+				a {
+					background: @major_color;
+				}
+			}
+		}
+	}
+	&.home2-bottoms {
+		.modtitle {
+			color: @header_color;
+		}
+		a {
+			color: #222;
+			&:hover {
+				color: @major_color;
+			}
+		}
+		.menu {
+			li {
+				color: #e5e5e5;
+				&:hover {
+					color: @major_color;
+				}
+			}
+		}
+		.btn {
+			color: #fff;
+			background: @major_color;
+			&:hover {
+				//color: @major_color;
+				&:before, &:after {
+					//background-color: #fff;
+				}
+			}
+			
+		}
+	}
+}
+#sp-footer-wrapper{
+	a {
+		color: #fff;
+		&:hover {
+			color: lighten(@major_color, 10%);
+		}
+	}
+	&.home2-footer {
+		a {
+			color: lighten(@major_color, 10%);
+			&:hover {
+				color: darken(@major_color, 10%);
+			}
+		}
+	}
+}
+/* End Footer
+ *============  Start Theme  ============
+ *=======================================*/
+.sp-page-title {
+	h2{
+		&::before {
+			background: @major_color;
+		}
+	}
+}
+.owl-theme {
+	.owl-controls {
+		.owl-buttons {
+			div {
+				&:hover, &:active {
+					background-color: @major_color;
+					border-color: @major_color;
+				}
+			}
+		}
+	}
+}
+/* End Theme
+ *=======================================
+ *============  Start Pages  ============
+ *=======================================*/
+ 
+//contact
+
+
+//about
+
+
+//sevice
+
+
+//home1
+.about-team {
+	.sppb-person-image {
+		.sppb-person-social {
+			a {
+				background: #fff;
+				color: @header_color;
+				&:hover {
+					background: @major_color;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+.clients-say-wrapper {
+	.sppb-testimonial-pro {
+		.sppb-carousel-controls {
+			.sppb-carousel-control:hover{
+				background-color: @major_color;
+			}	
+		}
+		.sppb-avatar {
+			border-color: @major_color;
+		}
+	}
+}
+//home2
+
+
+
+.about-team {
+	.sppb-feature-box-title {
+		span {
+			color: @text_color;
+		}
+	}
+}
+/* End Pages
+ *============  Start joomla  =========== 
+*=======================================*/
+.entry-header {
+	h2, h3 {
+		a {
+			&:hover {
+				color: @major_color;
+			}
+		}
+	}
+}
+// Search
+.search {
+	.btn-toolbar {
+		button {
+			background: @major_color;
+		}
+	}
+}
+
+// Blog
+.post-format {
+	background: @major_color;
+}
+.vina-ticker-content{
+	.title{
+		&:hover{
+			a{
+				color: @major_color !important;			
+			}
+		}
+	}
+}
+.voting-symbol{
+	span.star.active:before{
+		color: @major_color;
+	}
+}
+
+.sp-rating {
+	span.star:hover:before,
+	span.star:hover ~ span.star:before {
+		color: darken(@major_color, 10%);
+	}
+}
+.article-info {
+	>dd{ 
+		color: lighten(@text_color, 20%);
+		> a {
+			color: lighten(@text_color, 20%);
+		}
+		&:hover {
+			color: @major_color;
+			> a {
+				color: @major_color;
+			}
+		}
+	}
+}
+.entry-link,
+.entry-quote {
+	background: @major_color;
+}
+
+blockquote {
+	border-color: @major_color;
+}
+
+.carousel-left,
+.carousel-right {
+	&:hover {
+		background: @major_color;
+	}
+}
+.jcomments-links {
+	.comments-link,
+	.readmore-link {
+		color: @header_color;
+		&:hover {
+			color: @major_color;
+			//border-color: @major_color;
+			&:hover:before {
+				border-color: @major_color transparent;
+			}
+			&:hover:after {
+				border-color: transparent @major_color ;
+			}
+		}
+	}
+}
+#comments-form-send {
+	.btn {
+		background: @major_color;
+		color: #fff;
+		&:hover {
+			color: @major_color;
+			&:hover:before {
+				border-color: @major_color transparent;
+			}
+			&:hover:after {
+				border-color: transparent @major_color ;
+			}
+		}
+	}
+}
+.item {
+	.actions {
+		.btn-button {
+			color: @header_color;
+			&:hover {
+				color: #fff;
+				background: @major_color;
+			}
+		}
+	}
+	.readmore {
+		a{
+			color: @header_color;
+			&:hover {
+				color: #fff;
+				&:before,  &:after {
+					color: @major_color;
+				}
+			}
+		}
+	}
+	.pager {
+		li {
+			a {
+				&:hover {
+					background-color: @major_color;
+				}
+			}
+		}
+	}
+}
+/* End Joomla
+ *============  Start Module  ===========
+ *=======================================*/
+.breadcrumb {
+	li {
+		a {
+			color: @text_color;
+			&:hover {
+				color: @major_color;
+			}
+		}
+	}
+}
+#sp-right, 
+#sp-left {
+	.search {
+		.btn {
+			//.a_text_color;
+			.a_header_color
+		}
+	}
+	.vina-treeview-virtuemart {
+		.treeview {
+			li {
+				a {
+					.a_header_color;
+				}
+				&:before {
+					background: @major_color;
+				}
+				&:hover, &:before{
+					color: @major_color;	
+				}
+			}
+		}
+	}
+	.cf_form {
+		
+		.cf_filtering_knob_from,
+		.cf_filtering_knob_to,{
+			border: 3px solid @major_color;
+			background: #fff;
+		}
+		.slider_bkg_img {
+			background: @major_color;
+		}
+		.slider_bkg_img {
+			background: @major_color;
+		}
+		#price_clear,
+		.cf_resetAll_link {
+			&:hover, &:focus {
+				background: @major_color;
+			}
+		}
+	}
+	.vina-ticker-content {
+		.title {
+			a {
+				color: #202020;
+				&:hover {
+					@major_color !important;
+				}
+			}
+		}
+	}
+	.tagspopular   {
+		li {
+			a {
+				color: @text_color;
+				&:hover {
+					color: @major_color;
+					&:before {
+						border-color: @major_color transparent;
+					}
+					
+					&:after {
+						border-color: transparent @major_color;
+					}
+				}
+				
+			}
+		}
+	}
+	.cf_form {
+		.cf_filters_list {
+			li{
+				&:hover{
+					a{
+						color: @major_color;
+					}
+					&:before{
+						color: @major_color;
+					}
+				}
+			}
+		}
+	}
+}
+// Module
+.sp-module {
+	ul {
+		>li {
+			>a {
+				.a_text_color;
+			}
+		}
+	}
+
+	.latestnews {
+		>div {
+			>a {
+				.a_text_color;
+			}
+		}
+	}
+
+	.tagscloud {
+		.tag-name {
+			&:hover {
+				background: @major_color;
+			}	
+		}
+	}
+	
+}
+
+// sp Simple Portfolio
+.sp-simpleportfolio .sp-simpleportfolio-filter > ul > li.active > a,
+.sp-simpleportfolio .sp-simpleportfolio-filter > ul > li > a:hover {
+	background: @major_color;
+}
+//slideshow {
+.rev_slider_wrapper {
+	.btn-slider {
+
+	}
+	.tp-caption .btn-slider:hover {
+		background: @major_color;
+		color: #fff;
+		border-color: @major_color;
+	}
+	.tp-rightarrow.default:hover,
+	.tp-leftarrow.default:hover {
+		background-color: @major_color;
+	}
+	.tp-bullets.simplebullets.round .bullet {
+		background-image:url(../../images/presets/@{preset}/bullet.png);
+		&.selected {
+			background-image:url(../../images/presets/@{preset}/bullet-selected.png);
+		}
+	}
+}
+.vina-carousel-content {
+	&.style-1 {
+		.title {
+			a {
+				color: @header_color !important;
+				&:hover {
+					color: @major_color !important;
+				}
+			}
+			&:before {
+				background: @major_color;
+			}
+		}
+		.readmore {
+			a{
+				color: @text_color !important;
+				
+				&:hover{
+					color: @major_color !important;
+					border-bottom: 1px solid @major_color;
+					&:before, &:after {
+						color: @major_color;
+					}
+				}
+			}
+		}
+	}
+	
+	.owl-buttons{
+		top: auto !important;
+		bottom: 0;
+		div{
+			position: relative;
+			
+			height: 40px !important;
+			&:before{
+				top: 20px !important;
+				font-size: 16px !important;
+			}
+		}
+	}
+}
+
+.sptab-vert {
+	.sptab {
+		ul.tabs_container {
+			li.tab{
+				&.first-tab {
+					background-color: @major_color;
+					color: #fff;
+					&.active, &:hover {
+						color: #fff;
+					}
+				}
+				&.active, &:hover {
+					color: @major_color;
+					&:before{
+						background-color: @major_color;
+					}
+					span:after {
+						background-image:url(../../images/presets/@{preset}/long-arrow-right.png);
+						.rtl &{
+							background-image:url(../../images/presets/@{preset}/long-arrow-left.png);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.optimized-wrapper {
+	ul {
+		li {
+			&:before {
+				background-image:url(../../images/presets/@{preset}/long-arrow-right.png);
+				.rtl &{
+					background-image:url(../../images/presets/@{preset}/long-arrow-left.png);
+				}
+			}
+		}
+	}
+}
+//sppagebuilder
+
+/* End Module
+ *==========  Start vituemart  ==========
+ *=======================================*/ 
+ #fancybox-content {
+	.continue_link, .showcart {
+		background-color: @major_color;
+		&:hover {
+			background-color: lighten(@major_color, 20%);
+		}
+	}
+}
+.orderby-displaynumber {
+	color: @header_color;
+	.view-mode {
+		.mode-list { 						
+			&.active,
+			&:hover{				
+				background: @major_color url(../../images/icons/list1.png)center no-repeat;
+				box-shadow: 0px 2px lighten(@major_color, -10%);
+				border: 1px solid @major_color;
+			}
+		}
+		.mode-grid { 						
+			&.active,
+			&:hover{				
+				background: @major_color url(../../images/icons/grid1.png)center no-repeat;	
+				box-shadow: 0px 2px lighten(@major_color, -10%);
+				border: 1px solid @major_color;
+			}
+		}
+		
+	}
+	.orderlistcontainer {
+		a {
+			color: @header_color;
+			&:hover {
+				color: @major_color;
+			}
+		}
+		.title {
+			
+		}
+	}
+}
+
+.product-i {
+	.text-block {
+		.product-title {
+			a {
+				color: #3b3d3d;
+			}
+			&:before {
+				background: @major_color;
+			}
+			&:hover{
+				a {
+					color:  @major_color;
+				}
+			}
+		}
+	}
+	.actions {
+		span.addtocart-button, 
+		.btn-group {
+			&:before{
+				background: @major_color;
+			}
+			&:hover {
+				background: @major_color;
+				color: #fff;
+				.addtocart-button{
+					color: #fff;
+					
+				}
+				&:before{
+					background: lighten(@major_color, -4%);
+				}
+				a {
+					background: @major_color;
+					
+				}
+			}
+		}
+		span.addtocart-button {
+			border: 2px solid @major_color;
+			
+		}
+	}
+	
+	.product-price {
+		color: #ff560b;
+		font-weight: 600;
+	}	
+	.product-price {
+		.price-crossed{
+			color: #666666;
+			
+		}
+	}
+	.timer-grid{
+		border-top: 2px solid @major_color;
+		border-bottom: 2px solid @major_color;
+		color: @major_color;
+	}
+	
+	
+}
+.vm-product-details-container{
+	.to_review {
+		color: @text_color;
+		&:hover {
+			color: @major_color;
+			
+		}
+	}
+	.in-stock{
+		color: @major_color;
+	}
+	
+	span.addtocart-button {
+		border: 2px solid @major_color;
+		&:hover {
+			background: @major_color;
+			color: #fff;
+			.addtocart-button{
+				color: #fff;
+			}
+			&:before{
+				background: lighten(@major_color, -10%);
+				
+			}
+		}
+		&:before{
+			background: @major_color;
+			color: #fff;
+		}
+	}
+	.btn-groups {
+		
+		.btn-group {
+			.addtofav_aws_icon, #vmcompare a, a {
+				color: @text_color;
+				&:hover {
+					background: @major_color;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+.quantity-box {	
+	.quantity-minus:hover {
+		background: transparent url(../../images/general/minus-hover.png) no-repeat 0 0 !important;	
+		border: 0 !important;
+	}	
+	.quantity-plus:hover {		
+		background: transparent url(../../images/general/plus-hover.png) no-repeat 0 0 !important;
+		border: 0 !important;
+	}
+	
+}
+.productdetails {
+	.nav-tabs {
+		li {
+			a {
+				color: @header_color;
+				
+			}
+			&.active, &:hover {
+				a {
+					background: #5b5b5b;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+ /* End  vituemart
+ *==============  Strat k2  =============
+ *=======================================*/
+ 
+ /* End  K2
+*========================================*/
+ 
+ 
+ .style-home3{
+	.block-mini-cart{
+		.mini-cart-title{
+			background: @major_color;
+		}
+	}
+ }

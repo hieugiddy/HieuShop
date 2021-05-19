@@ -1,0 +1,88 @@
+/*
+# ------------------------------------------------------------------------
+# Vina Vertical Scroller for Tweeter for Joomla 3
+# ------------------------------------------------------------------------
+# Copyright(C) 2014 www.VinaGecko.com. All Rights Reserved.
+# @license http://www.gnu.org/licenseses/gpl-3.0.html GNU/GPL
+# Author: VinaGecko.com
+# Websites: http://vinagecko.com
+# Forum:    http://vinagecko.com/forum/
+# ------------------------------------------------------------------------
+*/
+.vina-vscoller-twitter {
+	width: 100%;
+}
+.vina-vscoller-twitter .header-block {
+	position: relative;
+}
+.vina-vscoller-twitter  .vina-items,
+.vina-vscoller-twitter  .vina-item {
+	max-width: 100%;
+}
+.vina-vscoller-twitter .header-block h3 {
+	padding: 0;
+	margin: 0;
+	line-height: 25px;
+}
+.vina-vscoller-twitter .header-block span {
+	height: 24px;
+	cursor: pointer;
+}
+.vina-vscoller-twitter .header-block span.up {
+	background: url("../images/left-white.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    text-indent: 10000px;
+    overflow: hidden;
+    position: absolute;
+    width: 16px;
+	right: 60px;
+}
+.vina-vscoller-twitter .header-block span.down {
+	background: url("../images/right-white.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    text-indent: 10000px;
+    overflow: hidden;
+    position: absolute;
+    width: 16px;
+	right: 0px;
+}
+.vina-vscoller-twitter .header-block span.toggle {
+	background: url("../images/play-white.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    text-indent: 10000px;
+    overflow: hidden;
+    position: absolute;
+    width: 20px;
+	right: 28px;
+}
+.vina-vscoller-twitter .header-block span.toggle.et-run {
+	background: url("../images/pause-white.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.vina-vscoller-twitter .text-block h4 {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+.vina-vscoller-twitter .vina-item .vina-header {
+	position: relative;
+}
+.vina-vscoller-twitter .vina-item .permalink {
+	float: right;
+    margin-top: 2px;
+    position: relative;
+    z-index: 50;
+	text-transform: lowercase;
+}
+.vina-vscoller-twitter .vina-item .avatar {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+}
+.vina-vscoller-twitter .vina-item .full-name {
+	font-weight: bold;
+	font-size: 13px;
+}
+.vina-vscoller-twitter .vina-item .nick-name {
+	text-decoration: none;
+}
+.vina-vscoller-twitter .follow-us {
+	text-align: center;
+	padding-top: 10px;
+}

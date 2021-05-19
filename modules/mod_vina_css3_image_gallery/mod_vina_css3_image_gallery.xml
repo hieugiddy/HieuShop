@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+	
+<!-- Author Block -->
+	<name>Vina CSS3 Image Gallery</name>
+	<author>VinaGecko.com</author>
+	<creationDate>January 27, 2015</creationDate>
+	<copyright>Copyright (C) 2014 VinaGecko.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenseses/gpl-3.0.html GNU/GPL</license>
+	<authorEmail>support@vinagecko.com</authorEmail>
+	<authorUrl>http://VinaGecko.com</authorUrl>
+	<version>1.2.0</version>
+	
+	<description>
+		<![CDATA[<div style="border: 1px solid red; border-radius: 7px; padding: 10px;">
+		<strong>Vina CSS3 Image Gallery</strong> is a cross-browser and responsive module for Joomla 3.x to display images/photos in dynamic grid layouts with nice CSS3 animation and will display your image gallery in a responsive full page slideshow/lightbox.<br>
+		<strong>VinaGecko.com</strong> - Premium <a href="http://vinagecko.com/joomla-modules" target="_blank">Joomla Modules</a>, <a href="http://vinagecko.com/joomla-plugins" target="_blank">Joomla Plugins</a>, <a href="http://vinagecko.com/joomla-templates" target="_blank">Joomla Templates</a>.
+		</div>]]>
+	</description>
+
+<!-- Files upload Block -->	
+	<files>
+		<filename module="mod_vina_css3_image_gallery">mod_vina_css3_image_gallery.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>samples</folder>
+		<folder>libs</folder>
+		<folder>assets</folder>
+		<folder>languages</folder>
+		<folder>tmpl</folder>
+	</files>
+
+<!-- Languages Block -->
+	<languages>
+		<language tag="en-GB">languages/en-GB.mod_vina_css3_image_gallery.ini</language>
+	</languages>
+	
+<!-- Config Block -->
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_vina_css3_image_gallery/libs/elements">
+			<fieldset name="basic">
+				<field
+					name="moduleWidth"
+					type="text"
+					default="100%"
+					label="VINA_CSS3_IGALLERY_MMAX_WIDTH"
+					description="VINA_CSS3_IGALLERY_MMAX_WIDTH_DESC" />
+				<field
+					name="moduleHeight"
+					type="text"
+					default="100%"
+					label="VINA_CSS3_IGALLERY_MAX_HEIGHT"
+					description="VINA_CSS3_IGALLERY_MAX_HEIGHT_DESC" />
+				<field
+					name="overflow"
+					type="list"
+					default="hidden"
+					label="VINA_CSS3_IGALLERY_OVERFLOW"
+					description="VINA_CSS3_IGALLERY_OVERFLOW_DESC">
+						<option value="hidden">hidden</option>
+						<option value="scroll">scroll</option>
+						<option value="visible">visible</option>
+						<option value="unset">unset</option>
+						<option value="auto">auto</option>
+				</field>
+				<field
+					name="modulePadding"
+					type="text"
+					default="0px 0px 0px 0px"
+					label="VINA_CSS3_IGALLERY_MODULE_PADDING"
+					description="VINA_CSS3_IGALLERY_MODULE_PADDING_DESC" />
+				<field
+					name="moduleMargin"
+					type="text"
+					default="0px 0px 0px 0px"
+					label="VINA_CSS3_IGALLERY_MODULE_MARGIN"
+					description="VINA_CSS3_IGALLERY_MODULE_MARGIN_DESC" />
+				<field
+					name="bgImage"
+					type="media" 
+					label="VINA_CSS3_IGALLERY_BACKGROUND_IMAGE" 
+					description="VINA_CSS3_IGALLERY_BACKGROUND_IMAGE_DESC" 
+					size="30"
+					default="" />
+				<field 
+                    name="isBgColor" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_IS_BG_COLOR" 
+                    description="VINA_CSS3_IGALLERY_IS_BG_COLOR_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="bgColor"
+					type="color" 
+					label="VINA_CSS3_IGALLERY_BG_COLOR" 
+					description="VINA_CSS3_IGALLERY_BG_COLOR_DESC" 
+					size="30"
+					default="#FFFFFF" />
+					
+				<field type="spacer" name="@item" hr="true" />
+				<field
+					name="maxItemPage"
+					type="text"
+					default="0"
+					label="VINA_CSS3_IGALLERY_MAX_ITEMS_PAGE"
+					description="VINA_CSS3_IGALLERY_MAX_ITEMS_PAGE_DESC" />
+				<field
+					name="maxItemRow"
+					type="text"
+					default="4"
+					label="VINA_CSS3_IGALLERY_MAX_ITEMS"
+					description="VINA_CSS3_IGALLERY_MAX_ITEMS_DESC" />
+				<field
+					name="itemMaxWidth"
+					type="text"
+					default="400"
+					label="VINA_CSS3_IGALLERY_MAX_WIDTH"
+					description="VINA_CSS3_IGALLERY_MAX_WIDTH_DESC" />
+				<field
+					name="itemMinWidth"
+					type="text"
+					default="250"
+					label="VINA_CSS3_IGALLERY_MIN_WIDTH"
+					description="VINA_CSS3_IGALLERY_MIN_WIDTH" />
+				<field 
+                    name="resizeImage" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_RESIZE_IMAGE" 
+                    description="VINA_CSS3_IGALLERY_RESIZE_IMAGE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="imageWidth"
+					type="text"
+					default="400"
+					label="VINA_CSS3_IGALLERY_IMAGE_WIDTH"
+					description="VINA_CSS3_IGALLERY_IMAGE_WIDTH_DESC" />
+				<field
+					name="imageHeight"
+					type="text"
+					default="250"
+					label="VINA_CSS3_IGALLERY_IMAGE_HEIGHT"
+					description="VINA_CSS3_IGALLERY_IMAGE_HEIGHT_DESC" />	
+				<field 
+                    name="isItemBgColor" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_IS_ITEM_BGCOLOR" 
+                    description="VINA_CSS3_IGALLERY_IS_ITEM_BGCOLOR_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="itemBgColor"
+					type="color" 
+					label="VINA_CSS3_IGALLERY_ITEM_BGCOLOR" 
+					description="VINA_CSS3_IGALLERY_ITEM_BGCOLOR_DESC" 
+					size="30"
+					default="#f5f5f5" />
+				<field 
+                    name="textBlock" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_TEXT_BLOCK" 
+                    description="VINA_CSS3_IGALLERY_TEXT_BLOCK_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="itemTextColor"
+					type="color" 
+					label="VINA_CSS3_IGALLERY_ITEM_TEXT_COLOR" 
+					description="VINA_CSS3_IGALLERY_ITEM_TEXT_COLOR_DESC" 
+					size="30"
+					default="#333333" />
+				<field
+					name="itemLinkColor"
+					type="color" 
+					label="VINA_CSS3_IGALLERY_ITEM_LINK_COLOR" 
+					description="VINA_CSS3_IGALLERY_ITEM_LINK_COLOR_DESC" 
+					size="30"
+					default="#0088cc" />
+				<field
+					name="itemPadding"
+					type="text"
+					default="10px 10px 4px 10px"
+					label="VINA_CSS3_IGALLERY_ITEM_PADDING"
+					description="VINA_CSS3_IGALLERY_ITEM_PADDING_DESC" />
+			</fieldset>
+			
+			<fieldset name="gallery">				
+				<field 
+                    name="draggable" 
+                    type="radio" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_DRAGGABLE" 
+                    description="VINA_CSS3_IGALLERY_DRAGGABLE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="animate" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_ANIMATE" 
+                    description="VINA_CSS3_IGALLERY_ANIMATE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="moduleCache" 
+                    type="hidden" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_MODULE_CACHE" 
+                    description="VINA_CSS3_IGALLERY_MODULE_CACHE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="delay"
+					type="text"
+					default="0"
+					label="VINA_CSS3_IGALLERY_DELAY"
+					description="VINA_CSS3_IGALLERY_DELAY_DESC" />
+				<field 
+                    name="fixSize" 
+                    type="list" 
+                    default="null" 
+                    label="VINA_CSS3_IGALLERY_FIXSIZE" 
+                    description="VINA_CSS3_IGALLERY_FIXSIZE_DESC">
+                        <option value="null">Unset</option>
+                        <option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field
+					name="gutterX"
+					type="text"
+					default="10"
+					label="VINA_CSS3_IGALLERY_GUTTERX"
+					description="VINA_CSS3_IGALLERY_GUTTERX_DESC" />
+				<field
+					name="gutterY"
+					type="text"
+					default="10"
+					label="VINA_CSS3_IGALLERY_GUTTERY"
+					description="VINA_CSS3_IGALLERY_GUTTERY_DESC" />
+				<field 
+                    name="rightToLeft" 
+                    type="hidden" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_RIGHT2LEFT" 
+                    description="VINA_CSS3_IGALLERY_RIGHT2LEFT_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="bottomToTop" 
+                    type="hidden" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_BOTTOM2TOP" 
+                    description="VINA_CSS3_IGALLERY_BOTTOM2TOP_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+					
+				<field type="spacer" name="@script" hr="true" />
+				<field 
+                    name="single" 
+                    type="radio" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_SINGLE" 
+                    description="VINA_CSS3_IGALLERY_SINGLE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="loop" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_LOOP" 
+                    description="VINA_CSS3_IGALLERY_LOOP_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="thumbs" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_THUMBS" 
+                    description="VINA_CSS3_IGALLERY_THUMBS_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="title" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_TITLE" 
+                    description="VINA_CSS3_IGALLERY_TITLE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="autoplay" 
+                    type="radio" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_AUTOPLAY" 
+                    description="VINA_CSS3_IGALLERY_AUTOPLAY_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+                    name="time"
+                    type="text"
+                    label="VINA_CSS3_IGALLERY_TIME"
+                    default="3000"
+                    description="VINA_CSS3_IGALLERY_TIME_DESC_DESC" />				
+				<field 
+                    name="history" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_HISTORY" 
+                    description="VINA_CSS3_IGALLERY_HISTORY_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="zoomable" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_ZOOMABLE" 
+                    description="VINA_CSS3_IGALLERY_ZOOMABLE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="wheelNextPrev" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="VINA_CSS3_IGALLERY_WHEEL_NEXT_PREV" 
+                    description="VINA_CSS3_IGALLERY_WHEEL_NEXT_PREV_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+			</fieldset>
+			
+			<fieldset name="slider">
+				<field name="slides" type="data" label="Slides" description="" filter="raw" />
+			</fieldset>
+			
+			<fieldset name="advanced">				
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+						<option value="1">JGLOBAL_USE_GLOBAL</option>
+						<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+						<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
